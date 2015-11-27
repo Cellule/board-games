@@ -10,6 +10,7 @@
 import path from 'path';
 import webpack, { DefinePlugin, BannerPlugin } from 'webpack';
 import merge from 'lodash.merge';
+//import ExtractTextPlugin from "extract-text-webpack-plugin";
 
 const DEBUG = !process.argv.includes('release');
 const VERBOSE = process.argv.includes('verbose');
@@ -136,6 +137,9 @@ const appConfig = merge({}, config, {
       ...config.module.loaders, {
         test: /\.css$/,
         loader: 'style-loader/useable!css-loader!postcss-loader',
+      },{
+        test: /\.less$/,
+        loader: 'style-loader/useable!css-loader!postcss-loader!less-loader',
       },
     ],
   },
@@ -182,6 +186,9 @@ const serverConfig = merge({}, config, {
       ...config.module.loaders, {
         test: /\.css$/,
         loader: 'css-loader!postcss-loader',
+      },{
+        test: /\.less$/,
+        loader: 'css-loader!postcss-loader!less-loader',
       },
     ],
   },

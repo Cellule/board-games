@@ -11,6 +11,7 @@ import RegisterPage from './components/RegisterPage';
 import NotFoundPage from './components/NotFoundPage';
 import ErrorPage from './components/ErrorPage';
 import GamesPage from './components/GamesPage';
+import FlowChartPage from './components/FlowChartPage';
 
 const router = new Router(on => {
   on('*', async (state, next) => {
@@ -23,6 +24,8 @@ const router = new Router(on => {
   on('/login', async () => <LoginPage />);
 
   on('/games', async () => <GamesPage />);
+
+  on('/flow', async () => <FlowChartPage />);
 
   on('/register', async () => <RegisterPage />);
 
