@@ -2,6 +2,7 @@
 
 import request from 'superagent';
 import { canUseDOM } from 'fbjs/lib/ExecutionEnvironment';
+import { parseString as xmlParse } from 'xml2js';
 
 function getUrl(path) {
   if (path.startsWith('http') || canUseDOM) {
@@ -31,7 +32,31 @@ const HttpClient = {
         }
       });
   }),
-
+  getXml: path => new Promise((resolve, reject) => {
+    request
+      .get(getUrl(path))
+      .accept('text/xml')
+      .accept('application/xml')
+      .accept('text/html')
+      .accept('application/xhtml+xml')
+      .end((err, res) => {
+        console.log(getUrl(path))
+        if (err) {
+          if (err.status === 404) {
+            resolve(null);
+          } else {
+            reject(err);
+          }
+        } else {
+          xmlParse(res.text, (xmlErr, xmlRes) => {
+            if (xmlErr) {
+              return reject(xmlErr);
+            }
+            resolve(xmlRes);
+          });
+        }
+      });
+  }),
 };
 
 export default HttpClient;

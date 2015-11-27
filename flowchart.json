@@ -1,0 +1,193 @@
+{
+  "question": "Are you playing with children",
+  "yes": {
+    "question": "Younger than 7",
+    "yes": {
+      "question": "Girly girls only",
+      "yes": "Candy Land",
+      "no": {
+        "question": "Real rules or just for fun",
+        "fun": {
+          "question": "Rude Goldberg",
+          "yes": "Mouse Trap",
+          "no": "Operation"
+        },
+        "rules": {
+          "question": "Actually fun for Adults",
+          "yes": "Sorry!",
+          "no": "Life"
+        }
+      }
+    },
+    "no": {
+      "question": "Let them experience crushing defeat",
+      "yes": "Monopoly",
+      "no": {
+        "question": "Portable",
+        "yes": "Yahtzee!",
+        "no": {
+          "question": "One winner or a team effort",
+          "one": "Small World",
+          "team": "Forbidden Island"
+        }
+      }
+    }
+  },
+  "no": {
+    "question": "Playing for more than 2 hours",
+    "yes": {
+      "question": "Hardest rules ever",
+      "yes": "Axis and Allies",
+      "no": {
+        "question": "All players in until the end",
+        "yes": "Le Havre",
+        "no": {
+          "question": "Dice battles or 100% strategy",
+          "dice": "Risk",
+          "start": "Game of Thrones"
+        }
+      }
+    },
+    "no": {
+      "question": "Are you a huge nerd",
+      "yes": {
+        "question": "Do you want to spend dozens of hours to play",
+        "yes": "Warhammer",
+        "no": {
+          "question": "Do you really like spending money",
+          "yes": "Magic",
+          "no": {
+            "question": "Does the name Boomer give you wet dreams",
+            "yes": "Battlestar Galactica",
+            "no": "Cosmic Encounter"
+          }
+        }
+      },
+      "no": {
+        "question": "Do you think everyone should just get along",
+        "yes": {
+          "question": "Do you secretly wish you were a private investigator",
+          "yes": "Arkham Horror",
+          "no": {
+            "question": "Do you have a Monty Python fetish",
+            "yes": "Shadows Over Camelot",
+            "no": {
+              "question": "Zombies",
+              "yes": "Last Night on Earth",
+              "no": {
+                "question": "Would you rather fight monsters or viruses",
+                "virus": "Pandemic",
+                "monster": "Dungeon Run"
+              }
+            }
+          }
+        },
+        "no": {
+          "question": "Do you like to gamble",
+          "yes": "Rummoli",
+          "no": {
+            "question": "Are you over 50 years old",
+            "yes": {
+              "question": "More than 2 of you",
+              "yes": "Cribbage",
+              "no": {
+                "question": "Are you in Mensa",
+                "yes": {
+                  "question": "Chess too cliché",
+                  "yes": "Go",
+                  "no": "Chess"
+                },
+                "no": "Backgammon"
+              }
+            },
+            "no": {
+              "question": "Party game",
+              "yes": {
+                "question": "Looking to get laid",
+                "yes": "Twister",
+                "no": {
+                  "question": "Want to embarrass your friends",
+                  "yes": {
+                    "question": "Do you want to be a thug or an artist",
+                    "thug": "Ca$h'N'Gun$",
+                    "artist": "Cranium"
+                  },
+                  "no": {
+                    "question": "Are you a creative liar",
+                    "yes": {
+                      "question": "Words or trivia",
+                      "words": "Beyond Balderdash",
+                      "trivia": "Wits and Wagers"
+                    },
+                    "no": {
+                      "question": "Good with your hands",
+                      "yes": "Jenga (DK Edition)",
+                      "no": "Taboo"
+                    }
+                  }
+                }
+              },
+              "no": {
+                "question": "Are you a know it all",
+                "yes": "Trivial Pursuit",
+                "no": {
+                  "question": "Get straight A's",
+                  "yes": "Scrabble",
+                  "no": {
+                    "question": "Do you have a train fetish",
+                    "yes": {
+                      "question": "Do you enjoy economics",
+                      "yes": "Steam",
+                      "no": "Ticket to Ride"
+                    },
+                    "no": {
+                      "question": "Simple rules",
+                      "yes": {
+                        "question": "Words or tiles",
+                        "words": "Scattergories",
+                        "tiles": "Qwirkle"
+                      },
+                      "no": {
+                        "question": "Constant hard choices",
+                        "yes": {
+                          "question": "Farming fetish",
+                          "yes": "Agricola",
+                          "no": {
+                            "question": "Do you mind having to buy two games",
+                            "yes": {
+                              "question": "Are all players serious board game geeks",
+                              "yes": "Puerto Rico",
+                              "no": "Domaine"
+                            },
+                            "no": "Cities and knights"
+                          }
+                        },
+                        "no": {
+                          "question": "Card/deck based game",
+                          "yes": {
+                            "question": "Complexity",
+                            "less": "Dominion",
+                            "no": "7 Wonders"
+                          },
+                          "no": {
+                            "question": "Do you like to plan your strategy before your turn",
+                            "yes": "Settlers of Catan",
+                            "no": {
+                              "question": "Defined turns or no down-time",
+                              "turns": "Carcassonne",
+                              "no down-time": "Pillars of the Earth"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -68,10 +68,16 @@ const config = {
       {
         test: /\.jsx?$/,
         include: [
-          path.resolve(__dirname, '../node_modules/react-routing/src'),
           path.resolve(__dirname, '../src'),
         ],
         loaders: [...(WATCH && ['react-hot']), 'babel-loader'],
+      }, {
+        test: /\.jsx?$/,
+        include: [
+          path.resolve(__dirname, '../node_modules/react-routing/src'),
+          path.resolve(__dirname, '../node_modules/react-json-viewer/index.js'),
+        ],
+        loader: 'babel-loader',
       }, {
         test: /\.json$/,
         loader: 'json-loader',

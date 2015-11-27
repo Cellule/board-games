@@ -10,12 +10,11 @@
 import GitRepo from 'git-repository';
 import fetch from './lib/fetch';
 
-// TODO: Update deployment URL
 // For more information visit http://gitolite.com/deploy.html
 const getRemote = (slot) => ({
   name: slot ? slot : 'production',
-  url: `https://example${slot ? '-' + slot : ''}.scm.azurewebsites.net:443/example.git`,
-  website: `http://example${slot ? '-' + slot : ''}.azurewebsites.net`,
+  url: `https://Cellule@board-games${slot ? '-' + slot : ''}.scm.azurewebsites.net:443/board-games.git`,
+  website: `http://board-games${slot ? '-' + slot : ''}.azurewebsites.net`,
 });
 
 /**
@@ -24,7 +23,8 @@ const getRemote = (slot) => ({
  */
 export default async () => {
   // By default deploy to the staging deployment slot
-  const remote = getRemote(process.argv.includes('production') ? null : 'staging');
+  // const remote = getRemote(process.argv.includes('production') ? null : 'staging');
+  const remote = getRemote(null);
 
   // Initialize a new Git repository inside the `/build` folder
   // if it doesn't exist yet
