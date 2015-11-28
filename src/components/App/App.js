@@ -2,6 +2,7 @@
 
 import React, { PropTypes, Component } from 'react';
 import styles from './App.css';
+import bs from 'bootstrap/less/bootstrap.less';
 import withContext from '../../decorators/withContext';
 import withStyles from '../../decorators/withStyles';
 import Header from '../Header';
@@ -9,6 +10,7 @@ import Footer from '../Footer';
 
 @withContext
 @withStyles(styles)
+@withStyles(bs)
 class App extends Component {
 
   static propTypes = {

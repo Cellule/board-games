@@ -10,7 +10,7 @@
 import path from 'path';
 import webpack, { DefinePlugin, BannerPlugin } from 'webpack';
 import merge from 'lodash.merge';
-//import ExtractTextPlugin from "extract-text-webpack-plugin";
+import coreList from 'node-core-module-names';
 
 const DEBUG = !process.argv.includes('release');
 const VERBOSE = process.argv.includes('verbose');
@@ -62,6 +62,8 @@ const config = {
 
   resolve: {
     extensions: ['', '.webpack.js', '.web.js', '.js', '.jsx'],
+    alias: {
+    }
   },
 
   module: {
@@ -148,6 +150,10 @@ const appConfig = merge({}, config, {
 //
 // Configuration for the server-side bundle (server.js)
 // -----------------------------------------------------------------------------
+const nonExternals = [
+  "react-routing",
+  "bootstrap"
+];
 
 const serverConfig = merge({}, config, {
   entry: './src/server.js',
@@ -159,10 +165,19 @@ const serverConfig = merge({}, config, {
   target: 'node',
   externals: [
     function filter(context, request, cb) {
-      const isExternal =
-        request.match(/^[a-z][a-z\/\.\-0-9]*$/i) &&
-        !request.match(/^react-routing/) &&
-        !context.match(/[\\/]react-routing/);
+      let isExternal = request.match(/^[a-z][a-z\/\.\-0-9]*$/i);
+      if(isExternal) {
+        for(var non of nonExternals) {
+          if(request.match(new RegExp(`^${non}`)) ||
+            context.match(new RegExp(`[\\\\\/]${non}`))) {
+            isExternal = false;
+            break;
+          }
+        }
+      }
+      if(isExternal && global.__externals) {
+        global.__externals.push(/^([^\\\/])+/.exec(request)[0]);
+      }
       cb(null, Boolean(isExternal));
     },
   ],

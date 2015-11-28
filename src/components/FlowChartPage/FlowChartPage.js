@@ -5,7 +5,8 @@ import withStyles from '../../decorators/withStyles';
 import styles from './FlowChartPage.less';
 import request from 'superagent';
 import xmlParser from 'xml-parser';
-import flowchart from './flowchart.json'
+import flowchart from './flowchart.json';
+import {Col, Row, Grid} from 'react-bootstrap';
 
 @withStyles(styles)
 class FlowChartPage extends Component {
@@ -30,21 +31,23 @@ class FlowChartPage extends Component {
           answers.push(answer);
         }
       }
-      display = <div>
-        <div className="question">{flow.question}?</div>
-        {answers.map((a,i) => <div className={"answer" + i} key={a} onClick={() => {
+      display = <Col>
+        <Row><Col className="question">{flow.question}?</Col></Row>
+        <Row>
+        {answers.map((a,i) => <Col className={"answer" + i} key={a} onClick={() => {
           this.setState({flow: flow[a]})
-        }}>{a}</div>)}
+        }}>{a}</Col>)}
+        </Row>
         <div className="clear"></div>
-      </div>
+      </Col>
     } else {
       display = <div className="result">{flow}</div>;
     }
     return (
-      <div className="flowchart">
+      <Grid className="flowchart">
         <h1>{title}</h1>
-        <ul>{display}</ul>
-      </div>
+        <Row>{display}</Row>
+      </Grid>
     );
   }
 
