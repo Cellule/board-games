@@ -167,7 +167,7 @@
                           "yes": {
                             "question": "Complexity",
                             "less": "Dominion",
-                            "no": "7 Wonders"
+                            "more": "7 Wonders"
                           },
                           "no": {
                             "question": "Do you like to plan your strategy before your turn",
